@@ -1,0 +1,11 @@
+Aansh Bali — Web developer, video editor, marketer
+
+Imported from: https://calm-palmier-e41f94.netlify.app
+Netlify project: calm-palmier-e41f94
+Published deployment: 6ab897d02dcca9b63e389018
+Published at: 2026-09-27T04:13:04.032Z
+
+Original deployed files are preserved in the recovery export.
+The main branch uses project-relative asset URLs and disables Jekyll
+processing so this static site can be served by GitHub Pages.
+Historical Netlify project snapshots are kept on named branches.
