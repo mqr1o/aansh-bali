@@ -2,8 +2,6 @@
 
 Personal portfolio website for Aansh Bali: web development, video editing, and marketing.
 
-Website: https://mqr1o.github.io/aansh-bali/
-
-Custom domain: https://aanshbali.com/ (pending registration and DNS setup).
+Website: https://aanshbali.com/
 
 Static HTML site, published with GitHub Pages from the main branch.
