@@ -473,6 +473,9 @@ var PROJECTS = [
   { title:"Blitz Back", where:"Personal product", cat:["product"], wide:true, url:"",
     desc:"Instagram unfollow tracker that runs as a website, installable PWA, and Windows desktop app. A custom ZIP parser reads your Instagram export locally, so your data never leaves your device.",
     tags:["JavaScript","PWA","Node.js","Playwright","PyInstaller"] },
+  { title:"Brainrot vs Zombies", where:"Roblox game", cat:["product","game"], url:"https://github.com/mqr1o/brainrot-vs-zombies", code:true,
+    desc:"Lane-defense game with 10-wave co-op and a 1v1 mode where one player defends the garden while the other commands the zombie horde lane by lane.",
+    tags:["Luau","Roblox","Rojo","Multiplayer"] },
   { title:"Johnny's", where:"5 Bay Area locations", cat:["client"], url:"",
     desc:"Flagship multi-location site that auto-selects your nearest bar with geolocation, then swaps in that location's details and real Google reviews.",
     tags:["JavaScript","Geolocation","Multi-location"] },
@@ -585,17 +588,17 @@ var mh=MARQUEE.map(function(m){return "<span>"+esc(m)+"</span>"}).join("");
 $("#track").innerHTML=mh+mh.replace(/<span>/g,'<span aria-hidden="true">');
 
 /* projects + filters */
-var CATS=[["all","All"],["client","Client sites"],["bilingual","Bilingual"],["product","Products"]];
+var CATS=[["all","All"],["client","Client sites"],["bilingual","Bilingual"],["product","Products"],["game","Games"]];
 var ext='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg>';
 $("#projects").innerHTML=PROJECTS.map(function(p){
-  var live=!!p.url;
+  var live=!!p.url&&!p.code;
   return '<article class="card'+(p.wide?' wide':'')+(p.feat?' feat':'')+'" data-cat="'+p.cat.join(" ")+'">'+
     (p.feat?'<span class="feat-label">★ Featured project</span>':'')+
     (live?'<span class="badge"><i></i>Live</span>':'')+
     '<span class="where">'+esc(p.where)+'</span>'+
     '<h3>'+esc(p.title)+'</h3><p>'+esc(p.desc)+'</p>'+
     '<div class="tags">'+p.tags.map(function(t,i){return '<span class="tag'+(i===0&&p.cat.indexOf("bilingual")>-1?' k':'')+'">'+esc(t)+'</span>'}).join("")+'</div>'+
-    (live?'<a class="visit" href="'+esc(p.url)+'" target="_blank" rel="noopener">Visit site '+ext+'<span class="sr"> '+esc(p.title)+' (opens in new tab)</span></a>':'')+
+    (p.url?'<a class="visit" href="'+esc(p.url)+'" target="_blank" rel="noopener">'+(p.code?'View code ':'Visit site ')+ext+'<span class="sr"> '+esc(p.title)+' (opens in new tab)</span></a>':'')+
   '</article>';
 }).join("");
 $("#filters").innerHTML=CATS.map(function(c,i){
